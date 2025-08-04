@@ -1,43 +1,99 @@
-.lorem1{
+.header{
     display:grid;
-    grid-template-columns: 100%;
     grid-gap:1em;
     gap: 10px;
+    grid-area: header;
+    background-color: rgb(192, 64, 64);
+    border-radius: 12px;
+    color:white;
+    padding: 1.3em;
 }
 
-.lorem1 > div{
-    padding: 1.3em;
-    background-color: rgb(88, 4, 4);
-    color: white;
+.green1{
+    background-color: rgb(158, 212, 158);
+    grid-area: gbox;
     border-radius: 12px;
+    padding: 1.3em;
 }
-.lorem2{
+
+.blue1{
+    grid-area: bbox;
+    background-color: rgb(94, 132, 204);
+    border-radius: 12px;
+    padding: 1.3em;
+}
+
+.orange1{
+    background-color: rgb(235, 180, 79);
+    grid-area: obox;
+    border-radius: 12px;
+    padding: 1.3em;
+}
+
+.pink1{
+    background-color: rgb(196, 146, 155);
+    grid-area: pbox;
+    border-radius: 12px;
+    padding: 1.3em;
+}
+
+.yellow1{
+    background-color: rgb(209, 209, 129);
+    grid-area: ybox;
+    border-radius: 12px;
+    padding: 1.3em;
+}
+
+.purple1{
+    background-color: rgb(177, 118, 216);
+    grid-area: vbox;
+    border-radius: 12px;
+    padding: 1.3em;
+}
+.column1{
     display: grid;
     gap: 10px;
-    grid-template-columns: 50% 50%;
-    grid-template-rows: 50% 50%;
-    grid-template-areas:
-        "a b"
-        "c d"
-        "e f";
     color:white;
+    grid-template-areas:  
+    "pink1 "
+    "blue1"
+    "yellow1";
 }
 
-.lorem2 > div{
-    padding: 1.3em;
-    background-color: rgb(88, 4, 4);
-    color: white;
-    border-radius: 12px;
-}
 body{
     background-color: black;
     margin: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "pbox vbox"
+    "pbox gbox"
+    "bbox gbox"
+    "bbox obox"
+    "ybox obox";
+    gap: .7rem;
 }
 
-.lorem3{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    color: white;
+@media all and (min-width: 600px){
+    body{
+        grid-template-areas:
+        "header header"
+        "pbox pbox"
+        "bbox vbox"
+        "bbox gbox"
+        "ybox obox"; 
+    }
+}
 
+@media all and (min-width: 1200px){
+    body{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-areas:
+        "header header header"
+        "pbox pbox pbox"
+        "bbox bbox bbox"
+        "ybox ybox ybox"
+        "vbox gbox obox";
+    }
 }
